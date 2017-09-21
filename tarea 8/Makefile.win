@@ -1,0 +1,30 @@
+# Project: hola mundo
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = "hola\ mundo.o" $(RES)
+LINKOBJ  = "hola mundo.o" $(RES)
+LIBS =  -L"C:/Users/intel_000/Documents/Dev-Cpp/lib" -mwindows  
+INCS =  -I"C:/Users/intel_000/Documents/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Users/intel_000/Documents/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Users/intel_000/Documents/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Users/intel_000/Documents/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Users/intel_000/Documents/Dev-Cpp/include/c++/3.4.2"  -I"C:/Users/intel_000/Documents/Dev-Cpp/include" 
+BIN  = "hola mundo.exe"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "hola mundo.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "hola mundo.exe" $(LIBS)
+
+"hola\ mundo.o": hola\ mundo.c
+	$(CC) -c "hola mundo.c" -o "hola mundo.o" $(CFLAGS)
